@@ -6,7 +6,8 @@ public class Numbers {
         //call isPrimeOrNot
         // isPrimeOrNot();
         // productAndSum(234);
-        countSetBits(24);
+        // countSetBits(24);
+        binaryConversion(132);
     }
 
     static void isPrimeOrNot() {
@@ -68,7 +69,25 @@ public class Numbers {
         return counter;
     }
 
-    
+    static StringBuilder binaryConversion(int n) {
+
+        if (n == 0) {
+            return new StringBuilder("0");
+        }
+        
+        StringBuilder binary = new StringBuilder();
+
+        while (n != 0) {
+            int remainder = n % 2;
+            binary.append(remainder);
+            n = n / 2;
+        }
+
+        binary = binary.reverse();
+        System.out.println(binary);
+
+        return binary;
+    }
 
 
 }
