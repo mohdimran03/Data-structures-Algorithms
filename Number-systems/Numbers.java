@@ -7,7 +7,9 @@ public class Numbers {
         // isPrimeOrNot();
         // productAndSum(234);
         // countSetBits(24);
-        binaryConversion(132);
+        // decimalToBinary(132);
+        
+        binaryToDecimal("01001100");
     }
 
     static void isPrimeOrNot() {
@@ -69,7 +71,12 @@ public class Numbers {
         return counter;
     }
 
-    static StringBuilder binaryConversion(int n) {
+    static StringBuilder decimalToBinary(int n) {
+
+        // while (n > 0) {
+        //     binary.append(n & 1); // get last bit
+        //     n = n >> 1;           // shift right
+        // }
 
         if (n == 0) {
             return new StringBuilder("0");
@@ -89,6 +96,18 @@ public class Numbers {
         return binary;
     }
 
+    static int binaryToDecimal(String str) {
+
+        int result = 0;
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            result = result * 2 + (str.charAt(i) - '0');
+        }
+
+        System.out.println(result);
+
+        return result;
+    }
 
 }
 
