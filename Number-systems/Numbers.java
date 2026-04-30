@@ -8,8 +8,33 @@ public class Numbers {
         // productAndSum(234);
         // countSetBits(24);
         // decimalToBinary(132);
-        
-        binaryToDecimal("01001100");
+        // binaryToDecimal("01001100");
+        // reverseIntegers(-999034999);
+        // integerCompliment(24);
+        // boolean ans = powerOfTwo(16);
+        // System.out.println(ans);
+    }
+
+    static boolean powerOfTwo(int n) {
+        if (n == 0) {
+            return false;
+        }
+        return (n & (n - 1)) == 0;
+    }
+
+    static int integerCompliment(int n) {
+                int m = n;
+
+        int mask = 0;
+
+        while (m != 0) {
+            mask = (mask<<1 ) | 1;
+            m = m >> 1;
+        }
+
+        int ans = (~n) & mask;
+
+        return ans;
     }
 
     static void isPrimeOrNot() {
@@ -109,8 +134,38 @@ public class Numbers {
         return result;
     }
 
-}
+    static int reverseIntegers(int x) {
 
+        // int reverse = 0;
+
+        // while (x != 0) {
+
+        //     if (reverse > Integer.MAX_VALUE / 10 || reverse < Integer.MIN_VALUE / 10) {
+        //         return 0;
+        //     }
+
+        //     int digit = x % 10;
+        //     reverse = reverse * 10 + digit;
+        //     x /= 10;
+        // }
+
+        // System.out.println(reverse);
+
+        // return reverse;
+
+        boolean isNegative = x < 0;
+
+        String digits = Integer.toString(Math.abs(x));
+
+        String reverse = new StringBuilder(digits).reverse().toString();
+
+        int result = Integer.parseInt(reverse);
+
+        System.out.println(result);
+
+        return isNegative ? -result : result;
+    }
+}
 
 
 // Difference between product and sum of a number
