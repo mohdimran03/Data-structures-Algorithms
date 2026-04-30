@@ -13,6 +13,18 @@ public class Numbers {
         // integerCompliment(24);
         // boolean ans = powerOfTwo(16);
         // System.out.println(ans);
+        // int res = removeLowestSetBit(12);
+        // System.out.println(res);
+        int res = isolateLastBit(23);
+        System.out.println(res);
+    }
+
+    static int removeLowestSetBit(int n) {
+        return (n & (n - 1));
+    }
+
+    static int isolateLastBit(int n) {
+        return n & -n;
     }
 
     static boolean powerOfTwo(int n) {
