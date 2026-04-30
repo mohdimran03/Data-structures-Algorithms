@@ -13,10 +13,12 @@ public class Numbers {
         // integerCompliment(24);
         // boolean ans = powerOfTwo(16);
         // System.out.println(ans);
-        // int res = removeLowestSetBit(12);
+        // int[] arr = {2,3,1,4,2,3,4,};
+        // int res = findUnique(arr);
         // System.out.println(res);
-        int res = isolateLastBit(23);
+        int res = sumOfTwo(34, 51);
         System.out.println(res);
+
     }
 
     static int removeLowestSetBit(int n) {
@@ -176,6 +178,45 @@ public class Numbers {
         System.out.println(result);
 
         return isNegative ? -result : result;
+    }
+
+    static int removeLastBit(int n) {
+        return (n & (n - 1));
+    }
+
+    static int reverseBits(int n) {
+
+        int result = 0;
+
+        for (int i = 0; i < 32; i++) {
+            result = (result << 1) | (n & 1);
+            n >>>= 1;
+        }
+
+        return result;
+    }
+
+    static int findUnique(int[] arr) {
+
+        int result = 0;
+
+        for (int item : arr) {
+            result ^= item;
+        }
+
+        return result;
+    }
+
+    static int sumOfTwo(int a, int b) {
+        int carry = 0;
+
+        while (b != 0) {
+            carry = (a & b) << 1;
+            a = a ^ b;
+            b = carry;
+        }
+
+        return a;
     }
 }
 
